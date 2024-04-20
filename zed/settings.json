@@ -22,22 +22,6 @@
     "source.fixAll": true
   },
 
-  // Language-Specific
-  "languages": {
-    "Python": {
-      "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "bash",
-          "arguments": [
-            "-c",
-            "ruff check --select=I --fix --stdin-filename {buffer_path} | ruff format --stdin-filename {buffer_path}"
-          ]
-        }
-      }
-    }
-  },
-
   // Version Control
   "git": {
     "git_gutter": "tracked_files",
