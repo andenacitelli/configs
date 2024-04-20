@@ -1,0 +1,48 @@
+// ref: https://zed.dev/docs/configuring-zed
+{
+  // Analytics
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": true
+  },
+  "auto_update": true,
+
+  // Theme + Font
+  "theme": "One Dark",
+  "ui_font_size": 15,
+  "buffer_font_size": 13,
+  "buffer_font_family": "Fira Code",
+
+  // Keybinds
+  "base_keymap": "VSCode",
+
+  // Code Formatting & Linting
+  "format_on_save": "on",
+  "code_actions_on_format": {
+    "source.fixAll": true
+  },
+
+  // Language-Specific
+  "languages": {
+    "Python": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "bash",
+          "arguments": [
+            "-c",
+            "ruff check --select=I --fix --stdin-filename {buffer_path} | ruff format --stdin-filename {buffer_path}"
+          ]
+        }
+      }
+    }
+  },
+
+  // Version Control
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true
+    }
+  }
+}
